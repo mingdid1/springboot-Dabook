@@ -1,0 +1,75 @@
+.payment{
+    margin: 100px 380px 100px 380px;
+}
+.paymentDiv{
+    margin: 30px 50px 30px 50px;
+}
+.price{
+    font-weight: bold;
+}
+.btnDiv{
+    padding: 20px 120px;
+}
+button{
+    text-align: center;
+    height: 50px;
+    width: 300px;
+}
+.fontSpan{
+    font-weight: bold;
+}
+.productDiv{
+    display: flex;
+    border-top: 2px solid black;
+    margin-top: 10px;
+}
+.productName{
+    margin: 10px;
+    padding: 15px;
+    width: 77%;
+}
+.productPrice{
+    margin: 10px;
+    padding: 15px;
+    font-weight: bold;
+    text-align: right;
+    width: 23%;
+}
+.receiver{
+    padding: 10px 50px 10px 10px;
+}
+.receiverInfo{
+    padding: 10px;
+}
+.deliveryDiv{
+    display: flex;
+}
+.buyerDiv{
+    display: flex;
+    margin-top: 10px;
+    border-top: 2px solid black;
+}
+.buyer{
+    padding: 10px 50px 10px 10px;
+}
+.buyerInfo{
+    padding: 10px;
+}
+.delivery{
+    margin-top: 10px;
+    border-top: 2px solid black;
+}
+.payType{
+    border-top: 2px solid black;
+    margin-top: 10px;
+}
+.mini{
+    padding: 5px;
+}
+.deliveryApi{
+    margin: 10px;
+}
+.inputC{
+    border: none;
+    font-size: 18px;
+}

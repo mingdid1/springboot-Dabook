@@ -17,9 +17,12 @@ public class User {
     @Column(name = "user_no")
     private Long no;
 
+    @Column(unique = true)
     private String userId;
     private String password;
     private String phone;
+
+    @Column(unique = true)
     private String email;
 
     @OneToMany(mappedBy = "users")
@@ -37,4 +40,12 @@ public class User {
     @OneToMany(mappedBy = "users")
     private List<Review> review = new ArrayList<>();
 
+    public User(String userId, String password, String phone, String email) {
+        this.userId = userId;
+        this.password = password;
+        this.phone = phone;
+        this.email = email;
+    }
+
+    public User() {}
 }

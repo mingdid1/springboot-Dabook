@@ -1,0 +1,19 @@
+
+.option{
+    margin: 100px 400px 100px 400px;
+}
+.btn{
+    height: 50px;
+    width: 700px;
+}
+.btnDiv{
+    display: flex;
+    justify-content: space-around;
+}
+.spanTitle{
+    font-size: 20px;
+    font-weight: blod;
+}
+.spanFontSize{
+    font-size: 20px;
+}
