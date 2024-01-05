@@ -12,7 +12,8 @@ import static jakarta.persistence.FetchType.*;
 @Getter
 public class User {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "user_no")
     private Long no;
 
