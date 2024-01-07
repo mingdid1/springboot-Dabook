@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import {Navigate, Route, Routes, useNavigate} from 'react-router-dom';
 import './App.css';
 import Login from './component/customer/Login';
 import { useEffect, useState } from 'react';
@@ -6,6 +6,7 @@ import Main from './component/default/Main';
 import Cart from "./component/customer/Cart";
 import Join from "./component/customer/Join";
 import Mypage from "./component/Mypage/Mypage";
+import InfoModify from "./component/Mypage/InfoModify";
 
 function App() {
     const [message, setMessage]=useState([]);
@@ -78,13 +79,15 @@ function App() {
                 <Route
                     path="/Login"
                     exact={true}
-                    element={<Login />}
+                    element={
+                        <Login isLogin={isLogin} no={no}/>
+                }
                 />
                 <Route
                     path={"/Join"}
                     exact={true}
                     element={
-                        <Join isLogin={isLogin} logout={logout} no={no} />
+                        !isLogin ? <Join isLogin={isLogin} /> : <Navigate to="/" />
                     }
                 />
                 <Route
@@ -99,6 +102,13 @@ function App() {
                     exact={true}
                     element={
                         <Mypage isLogin={isLogin} logout={logout} no={no} />
+                    }
+                />
+                <Route
+                    path={"/InfoModify"}
+                    exact={true}
+                    element={
+                        <InfoModify />
                     }
                 />
             </Routes>

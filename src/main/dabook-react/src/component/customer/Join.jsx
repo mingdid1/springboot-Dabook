@@ -3,6 +3,7 @@ import Header from "../default/Header"
 import { useState } from "react";
 import axios from "axios";
 import DaumPostcodeEmbed from "react-daum-postcode";
+import Footer from "../default/Footer";
 
 
 const Join = (props) => {
@@ -123,26 +124,26 @@ const Join = (props) => {
 
     return (
         <>
-        <Header />
+            <Header/>
 
             <Container>
-                <h1 className='mb-5 mt-5' style={{textAlign:"center"}}>
+                <h1 className='mb-5 mt-5' style={{textAlign: "center"}}>
                     회원가입
                 </h1>
 
-                <Form 
+                <Form
                     method="post"
                     id="user_register"
                     style={{margin: "auto", width: "25rem"}}>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicId">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="text" 
-                                name="user_id"
-                                value={userId}
-                                onChange={chkUser}
-                                placeholder="Id"
+                            <Form.Control className="mt-2"
+                                          type="text"
+                                          name="user_id"
+                                          value={userId}
+                                          onChange={chkUser}
+                                          placeholder="Id"
                             />
                             <label htmlFor="InputId">Input Id</label>
                         </Form.Floating>
@@ -153,45 +154,45 @@ const Join = (props) => {
                         >
                             아이디 중복검사
                         </Button>
-                        </Form.Group>
+                    </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="password" 
-                                name="user_password"
-                                value={password}
-                                onChange={chkPassword}
-                                placeholder="Password"
+                            <Form.Control className="mt-2"
+                                          type="password"
+                                          name="user_password"
+                                          value={password}
+                                          onChange={chkPassword}
+                                          placeholder="Password"
                             />
                             <label htmlFor="InputPassword">Password</label>
                         </Form.Floating>
                         {password.length > 0 && (
-                        <div
-                            className={`message ${isPassword ? "success" : "error"}`}>
-                              {passwordMessage}
-                        </div>
+                            <div
+                                className={`message ${isPassword ? "success" : "error"}`}>
+                                {passwordMessage}
+                            </div>
                         )}
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="userName" 
-                                name="user_name"
-                                onChange={chkName}
-                                placeholder="Name"
+                            <Form.Control className="mt-2"
+                                          type="userName"
+                                          name="user_name"
+                                          onChange={chkName}
+                                          placeholder="Name"
                             />
                             <label htmlFor="InputName">Name</label>
                         </Form.Floating>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicPhone">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="text" 
-                                name="phone"
-                                placeholder=""
+                            <Form.Control className="mt-2"
+                                          type="text"
+                                          name="phone"
+                                          placeholder=""
                             />
                             <label htmlFor="InputPhone">PhoneNumber</label>
                         </Form.Floating>
@@ -199,13 +200,24 @@ const Join = (props) => {
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="text" 
-                                name="user_zipcode"
-                                value={zipcode}
-                                onChange={Inputzipcode}
-                                placeholder=""
-                                readOnly
+                            <Form.Control className="mt-2"
+                                          type="email"
+                                          name="email"
+                                          placeholder=""
+                            />
+                            <label htmlFor="InputPhone">Email</label>
+                        </Form.Floating>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="InputZipcode">
+                        <Form.Floating className="mb-3">
+                            <Form.Control className="mt-2"
+                                          type="text"
+                                          name="user_zipcode"
+                                          value={zipcode}
+                                          onChange={Inputzipcode}
+                                          placeholder=""
+                                          readOnly
                             />
                             <label htmlFor="InputZipcode">zipcode</label>
                         </Form.Floating>
@@ -217,37 +229,37 @@ const Join = (props) => {
                             우편번호 찾기
                         </Button>
                     </Form.Group>
-                    
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+
+                    <Form.Group className="mb-3" controlId="formBasicAddress1">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="text" 
-                                name="user_address"
-                                value={address}
-                                onChange={Inputaddress}
-                                placeholder=""
+                            <Form.Control className="mt-2"
+                                          type="text"
+                                          name="user_address"
+                                          value={address}
+                                          onChange={Inputaddress}
+                                          placeholder=""
                             />
                             <label htmlFor="InputAddress">Address</label>
                         </Form.Floating>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicAddress2">
                         <Form.Floating className="mb-3">
-                            <Form.Control className="mt-2" 
-                                type="text" 
-                                name="user_address_detail"
-                                placeholder="상세주소"
+                            <Form.Control className="mt-2"
+                                          type="text"
+                                          name="user_address_detail"
+                                          placeholder="상세주소"
                             />
                             <label htmlFor="InputAddress">상세주소</label>
                         </Form.Floating>
                     </Form.Group>
 
-                    <Form.Group className="mt-3 mb-4" controlId="formBasicSubmit" style={{float:"right"}}>
-                        <Button variant="outline-secondary" 
-                            style={{margin: "auto", width: "10rem"}}
-                            type="submit"
-                            onClick={register}
-                            disabled={!(isId && isPassword && isName)}
+                    <Form.Group className="mt-3 mb-4" controlId="formBasicSubmit" style={{float: "right"}}>
+                        <Button variant="outline-secondary"
+                                style={{margin: "auto", width: "10rem"}}
+                                type="submit"
+                                onClick={register}
+                                disabled={!(isId && isPassword && isName)}
                         >
                             회원가입
                         </Button>
@@ -255,6 +267,14 @@ const Join = (props) => {
                 </Form>
 
             </Container>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Footer/>
+
             {/* 우편번호 모달 시작 */}
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>

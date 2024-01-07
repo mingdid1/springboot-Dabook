@@ -2,6 +2,7 @@ import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import Header from '../default/Header';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import Footer from "../default/Footer";
 
 
 const Login = ({isLogin, no}) => {
@@ -161,6 +162,8 @@ const Login = ({isLogin, no}) => {
         </Navbar>
 
       </Container>
+
+        <Footer />
     </>
   );
 }
