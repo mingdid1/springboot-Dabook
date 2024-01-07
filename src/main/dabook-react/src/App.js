@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {Route, Routes} from "react-router-dom";
 
 function App() {
   const [message, setMessage]=useState([]);
@@ -11,10 +12,21 @@ function App() {
           setMessage(data);
         });
   },[]);
+
+  const [isLogin, setIsLogin] = useState(false); // 로그인 상태 관리
+
   return (
-      <div>
-        {message}
-      </div>
+      <>
+          <Routes>
+              <Route
+                  path="/"
+                  exact={true}
+                  element={
+                      <Main isLogin={isLogin} logout={logout} no={message} />
+                  }
+              />
+          </Routes>
+      </>
   );
 }
 
