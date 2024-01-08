@@ -13,17 +13,17 @@ function SubOption(){
       let o = option[i]
       opt.push(
       <>
-          <button className="btn">
-            <div className="btnDiv">
-              <span className="spanTitle">{o.title}</span>
-              <span className="spanFontSize">{o.ex}</span>
-              <span className="spanFontSize">{o.price}</span>
+          <button className="btn-sub-j">
+            <div className="btnDiv-j">
+              <span className="spanTitle-j">{o.title}</span>
+              <span className="spanFontSize-j">{o.ex}</span>
+              <span className="spanFontSize-j">{o.price}</span>
             </div>
           </button><br/><br />
       </>)
     }
     return(
-      <div className="option">
+      <div className="option-j">
         <h3>구독</h3>
         <Link to="/pay">{opt}</Link>
         <Routes>

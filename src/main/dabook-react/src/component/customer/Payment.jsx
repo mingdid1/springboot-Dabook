@@ -9,7 +9,7 @@ const OrderItem = () => {
   return(
     <>
       <div >
-        <span className="fontSpan">주문상품정보</span>
+        <span className="fontSpan-j">주문상품정보</span>
         <Product />
       </div>
       <br /><br />
@@ -18,12 +18,12 @@ const OrderItem = () => {
 }
 const Product = () => {
   return(
-    <div className="productDiv">
-      <div className="productName">
+    <div className="productDiv-j">
+      <div className="productName-j">
         <ProductName name="책1가나다라마바사아자차카타파하"/>
         <ProductName name="책1가나다라마바사아자차카타파하책1가나다"/>
       </div>
-      <div className="productPrice">
+      <div className="productPrice-j">
         <Producprice price="1500000"/>
         <Producprice price="30000"/>
       </div>
@@ -33,14 +33,14 @@ const Product = () => {
 const ProductName = (props) => {
   return(
     <>
-      <div className="mini">{props.name}</div>
+      <div className="mini-j">{props.name}</div>
     </>
   );
 }
 const Producprice = (props) => {
   return(
     <>
-      <div className="mini">{props.price} 원</div>
+      <div className="mini-j">{props.price} 원</div>
     </>
   );
 }
@@ -50,15 +50,15 @@ const Buyer = () => {
   return(
     <>
       <div >
-        <span className="fontSpan">구매자 정보</span> <br />
-        <div className="buyerDiv">
-          <div className="buyer">
-            <div className="mini">이름</div>
-            <div className="mini">전화번호</div>
+        <span className="fontSpan-j">구매자 정보</span> <br />
+        <div className="buyerDiv-j">
+          <div className="buyer-j">
+            <div className="mini-j">이름</div>
+            <div className="mini-j">전화번호</div>
           </div>
-          <div className="buyerInfo">
-             <div className="mini">이재원</div>
-             <div className="mini">010-4586-2667</div>
+          <div className="buyerInfo-j">
+             <div className="mini-j">이재원</div>
+             <div className="mini-j">010-4586-2667</div>
           </div>
         </div>
       </div>
@@ -72,20 +72,20 @@ const Delivery = ({deliveryInfo}) => {
   return(
     <>
       <div>
-        <span className="fontSpan">배송지정보</span>
-        <div className="delivery">
-          <div className="deliveryDiv">
-            <div className="receiver">
-              <div className="mini">이름</div>
-              <div className="mini">전화번호</div>
+        <span className="fontSpan-j">배송지정보</span>
+        <div className="delivery-j">
+          <div className="deliveryDiv-j">
+            <div className="receiver-j">
+              <div className="mini-j">이름</div>
+              <div className="mini-j">전화번호</div>
             </div>
-            <div className="receiverInfo">
-              <div className="mini">
-                <input type="text" className="inputC" name="name" placeholder="받는 사람 이름"
+            <div className="receiverInfo-j">
+              <div className="mini-j">
+                <input type="text" className="inputC-j" name="name" placeholder="받는 사람 이름"
                     value={deliveryInfo.name}/>
               </div>
-              <div className="mini">
-                <input type="text" className="inputC" name="tel" placeholder="받는 사람 전화번호"
+              <div className="mini-j">
+                <input type="text" className="inputC-j" name="tel" placeholder="받는 사람 전화번호"
                        value={deliveryInfo.tel}/>
               </div>
             </div>
@@ -99,15 +99,15 @@ const Delivery = ({deliveryInfo}) => {
 }
 const DeliveryAPI = () => {
   return(
-    <div className="deliveryApi">배송지입력 주소 api</div>
+    <div className="deliveryApi-j">배송지입력 주소 api</div>
   );
 }
 const PayType = () => {
   return(
     <>
       <div>
-        <span className="fontSpan">결제수단</span>
-        <div className="payType">
+        <span className="fontSpan-j">결제수단</span>
+        <div className="payType-j">
           <ul>
             <li>Npay</li>
             <li>Kakao pay</li>
@@ -122,9 +122,11 @@ const PayType = () => {
 const PayBtn = () => {
   return(
     <>
-      <div className="btnDiv">
-        <Link to="/cart"><button>결제하기</button></Link>
-        <Routes>
+      <div className="btnDiv-j">
+        <Link to="/cart">
+            <button className="button-j">결제하기</button>
+        </Link>
+        <Routes>`
           <Route path="/Cart" Component={<Cart/>} />
         </Routes>
       </div>
@@ -164,10 +166,10 @@ function Payment(){
   return(
       <>
       <Header />
-      <div className="payment">
+      <div className="payment-j">
         <h3>주문/결제하기</h3>
         <br />
-        <div className="paymentDiv">
+        <div className="paymentDiv-j">
           <Delivery deliveryInfo={deliveryInfo}/>
           <input type="checkbox" checked={isDeliverySameAsBuyer} onChange={handleCheckboxChange}/>
           <span>배송지 정보 동일</span>

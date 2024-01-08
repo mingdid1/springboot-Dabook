@@ -34,12 +34,12 @@ const Count = (props) => {
     }, [count, price]);
 
   return(
-    <div className="volumeDiv">
-      <span className="price">{totalPrice}원</span>
-      <div className="volume">
-        <button className="volumeBtn" onClick={minus}>-</button>
+    <div className="volumeDiv-j">
+      <span className="price-j">{totalPrice}원</span>
+      <div className="volume-j">
+        <button className="volumeBtn-j" onClick={minus}>-</button>
         <span>&nbsp;{count}&nbsp;</span>
-        <button className="volumeBtn" onClick={plus}>+</button>
+        <button className="volumeBtn-j" onClick={plus}>+</button>
       </div>
     </div>
   );
@@ -50,16 +50,16 @@ const Goods = (props) => {
     const {bookName, price} = props;
 
   return(
-    <div className="goodsDiv">
-      <div className="aDiv">
+    <div className="goodsDiv-j">
+      <div className="aDiv-j">
             <div>
-              <img src="../../image/book.jpeg" alt=""/>
+              <img className="img-j" src="../../image/book.jpeg" alt=""/>
             </div>
-            <div className="goodsTitle">
-                <span className="titleFontSize">{props.bookName}</span><br /><br />
-                <span className="price">{props.price}원</span>
+            <div className="goodsTitle-j">
+                <span className="titleFontSize-j">{props.bookName}</span><br /><br />
+                <span className="price-j">{props.price}원</span>
             </div>
-            <div className="volumeDiv">
+            <div className="volumeDiv-j">
                 <Count price={price}/>
             </div>
           </div>
@@ -68,14 +68,14 @@ const Goods = (props) => {
 }
 const FreeDelivery = () => {
   return(
-    <div className="freeDelivery">
+    <div className="freeDelivery-j">
         <span>3만원 이상 구매시 무료배송</span>
     </div>
   );
 }
 const GoodsCount = () => {
   return(
-    <div className="goodsCount">
+    <div className="goodsCount-j">
       <span>총 주문상품 2개</span>
     </div>
   );
@@ -93,16 +93,16 @@ const PayCount = (props) => {
     const totalOrderAmount = productPrice + deliveryFee;
 
   return(
-    <div className="PayCount">
-        <div className="payCountDiv">
-          <div className="payNumber">
+    <div className="PayCount-j">
+        <div className="payCountDiv-j">
+          <div className="payNumber-j">
             <span>{productPrice}원</span>
             <span>+</span>
             <span>{deliveryFee}원</span>
             <span>=</span>
             <span>{totalOrderAmount}원</span>
           </div>
-          <div className="payText">
+          <div className="payText-j">
           <span>상품금액</span>
             <span></span>
             <span>배송비</span>
@@ -117,8 +117,8 @@ const PayCount = (props) => {
 
 const OrderBtn = () => {
   return(
-    <div className="orderbtn">
-          <button className="orderbutton">주문하기</button>
+    <div className="orderbtn-j">
+          <button className="orderbutton-j">주문하기</button>
     </div >
   );
 }
@@ -136,7 +136,7 @@ const Cart = ({isLogin, logout, no}) => {
     return(
       <>
         <Header />
-        <div className="cartGoodsDiv">
+        <div className="cartGoodsDiv-j">
             <Title />
             <Goods bookName={"책이름1"} price={15000} updateTotal={updateTotalPrice}/>
             <Goods bookName={"책이름2"} price={20000} updateTotal={updateTotalPrice}/>

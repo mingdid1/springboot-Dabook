@@ -1,51 +1,50 @@
-.title{
+.title-j{
     padding: 0 330px;
 }
-.goodsDiv{
+.goodsDiv-j{
     padding: 25px 10px 10px 10px;
     width: 930px;
 }
-.aDiv{
+.aDiv-j{
     padding: 25px 50px;
     display: flex;
     width: 930px;
     border-bottom: 2px solid lightgray;
 }
-img{
+.img-j{
     height: 300px;
     width: 200px;
 }
-.goodsTitle{
+.goodsTitle-j{
     padding-top: 30px;
     padding-left: 15px;
     width: 450px;
 }
-.titleFontSize{
+.titleFontSize-j{
     font-size: 25px;
 }
-.price{
+.price-j{
     font-weight: bold;
 }
-.volumeDiv{
+.volumeDiv-j{
     padding: 30px 0;
     width: 100px;
 }
-.volume{
+.volume-j{
     text-align: center;
     display: flex;
     justify-content: center;
 }
-.volumeBtn{
+.volumeBtn-j{
     width: 30px;
     height: 30px;
-    border: none;
     border: 2px solid black;
     font-weight: bold;
 }
-.cartGoodsDiv{
+.cartGoodsDiv-j{
     padding: 50px 330px 0px 330px;
 }
-.freeDelivery{
+.freeDelivery-j{
     padding: 0px 10px 10px 10px;
     margin-left: 10PX;
     text-align: right;
@@ -54,7 +53,7 @@ img{
     font-size: 23px;
     border-bottom: 2px solid lightgray;
 }
-.goodsCount{
+.goodsCount-j{
     padding: 0px 10px 10px 10px;
     margin-left: 10PX;;
     width: 930px;
@@ -63,18 +62,17 @@ img{
     border-bottom: 2px solid lightgray;
     text-align: left;
 }
-.payCount{
+.payCount-j{
     padding: 40px 330px;
     width: 930px;
     border-bottom: 2px solid lightgray;
 }
-.payCountDiv{
+.payCountDiv-j{
     width: 930px;
-    padding-left: 0px;
     margin-left: 10px;
     border-bottom: 2px solid lightgray;
 }
-.payNumber{
+.payNumber-j{
     padding: 10px;
     display: flex;
     justify-content: space-around;
@@ -82,17 +80,17 @@ img{
     font-weight: bold;
     font-size: 30px;
 }
-.payText{
+.payText-j{
     padding: 10px;
     display: flex;
     justify-content: space-around;
     margin: 5px;
 }
-.orderbtn{
+.orderbtn-j{
     padding: 30px 330px;
     text-align: center;
 }
-.orderbutton{
+.orderbutton-j{
     height: 70px;
     width: 500px;
     font-size: 25px;

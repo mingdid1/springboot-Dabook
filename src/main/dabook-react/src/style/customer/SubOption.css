@@ -1,19 +1,19 @@
 
-.option{
+.option-j{
     margin: 100px 400px 100px 400px;
 }
-.btn{
+.btn-sub-j{
     height: 50px;
     width: 700px;
 }
-.btnDiv{
+.btnDiv-j{
     display: flex;
     justify-content: space-around;
 }
-.spanTitle{
+.spanTitle-j{
     font-size: 20px;
-    font-weight: blod;
+    font-weight: bold;
 }
-.spanFontSize{
+.spanFontSize-j{
     font-size: 20px;
 }

@@ -1,75 +1,75 @@
-.payment{
+.payment-j{
     margin: 100px 380px 100px 380px;
 }
-.paymentDiv{
+.paymentDiv-j{
     margin: 30px 50px 30px 50px;
 }
-.price{
+.price-j{
     font-weight: bold;
 }
-.btnDiv{
+.btnDiv-j{
     padding: 20px 120px;
 }
-button{
+.button-j{
     text-align: center;
     height: 50px;
     width: 300px;
 }
-.fontSpan{
+.fontSpan-j{
     font-weight: bold;
 }
-.productDiv{
+.productDiv-j{
     display: flex;
     border-top: 2px solid black;
     margin-top: 10px;
 }
-.productName{
+.productName-j{
     margin: 10px;
     padding: 15px;
     width: 77%;
 }
-.productPrice{
+.productPrice-j{
     margin: 10px;
     padding: 15px;
     font-weight: bold;
     text-align: right;
     width: 23%;
 }
-.receiver{
+.receiver-j{
     padding: 10px 50px 10px 10px;
 }
-.receiverInfo{
+.receiverInfo-j{
     padding: 10px;
 }
-.deliveryDiv{
+.deliveryDiv-j{
     display: flex;
 }
-.buyerDiv{
+.buyerDiv-j{
     display: flex;
     margin-top: 10px;
     border-top: 2px solid black;
 }
-.buyer{
+.buyer-j{
     padding: 10px 50px 10px 10px;
 }
-.buyerInfo{
+.buyerInfo-j{
     padding: 10px;
 }
-.delivery{
+.delivery-j{
     margin-top: 10px;
     border-top: 2px solid black;
 }
-.payType{
+.payType-j{
     border-top: 2px solid black;
     margin-top: 10px;
 }
-.mini{
+.mini-j{
     padding: 5px;
 }
-.deliveryApi{
+.deliveryApi-j{
     margin: 10px;
 }
-.inputC{
+.inputC-j{
     border: none;
     font-size: 18px;
 }
