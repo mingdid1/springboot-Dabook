@@ -1,0 +1,41 @@
+.nowBookWholeSpace {
+  margin: 40px 12% 100px 12%;
+  width: 1100px;
+  height: 400px;
+}
+.menuName {
+  text-align: left;
+  margin-left: 30px;
+  font-family: "kimjungchulMyungjo";
+}
+.bookSpace {
+  border: 1px solid gray;
+  height: 370px;
+  display: flex;
+}
+.book1 {
+  margin: 20px 30px;
+  height: 310px;
+  width: 20%;
+}
+.book2 {
+  margin: 20px 30px;
+  height: 310px;
+  width: 20%;
+}
+.book3 {
+  margin: 20px 30px;
+  height: 310px;
+  width: 20%;
+}
+.book4 {
+  margin: 20px 30px;
+  height: 310px;
+  width: 20%;
+}
+.btn1 {
+  margin-top: 5px;
+  border: none;
+  background-color: white;
+  font-family: "kimjungchulMyungjo";
+}

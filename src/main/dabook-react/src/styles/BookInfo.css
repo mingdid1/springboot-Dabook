@@ -1,0 +1,40 @@
+.detailWholeSapce {
+  width: 1000px;
+  margin: 150px 200px;
+}
+.bookTitleSection {
+  padding: 0 0 100px 170px;
+  display: flex;
+  border-bottom: 1px solid gray;
+}
+.bookImg {
+  width: 250px;
+  height: auto;
+}
+.bookInfo {
+  margin-left: 80px;
+}
+.bookPrice {
+  margin-top: 100px;
+}
+
+.btnSpace {
+  margin-top: 50px;
+  display: flex;
+}
+.numSpace {
+  padding: 10px;
+}
+.addCart {
+  margin: 0 20px 0 50px;
+}
+.bookDetailSpace {
+  text-align: center;
+}
+.bookContentSpace {
+  margin-top: 40px;
+  text-align: center;
+}
+.booklink {
+  text-decoration: none;
+}

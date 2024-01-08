@@ -1,0 +1,21 @@
+.reviewWholeSection {
+  margin: 50px 200px 10px 230px;
+  width: 600px;
+  height: 150px;
+  border-bottom: 1px solid black;
+}
+.section1 {
+  margin: 0 0 20px 10px;
+  display: flex;
+}
+.reviewMemberInfo {
+  padding-right: 30px;
+}
+.reviewWriteDay {
+  padding-left: 30px;
+}
+.section2 {
+  margin-left: 10px;
+  text-align: left;
+  height: 30px;
+}
