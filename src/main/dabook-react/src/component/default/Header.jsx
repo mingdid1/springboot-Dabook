@@ -76,7 +76,7 @@ const Header = ({ isLogin, logout, no }) => {
                                 onClick={() => {
                                     navigate("/");
                                 }}>
-                                구독
+                                모든 책
                             </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>

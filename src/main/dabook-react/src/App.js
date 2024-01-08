@@ -91,7 +91,7 @@ function App() {
                     }
                 />
                 <Route
-                    path={"/Cart"}
+                    path={"/Cart/:no"}
                     exact={true}
                     element={
                         <Cart isLogin={isLogin} logout={logout} no={no} />
