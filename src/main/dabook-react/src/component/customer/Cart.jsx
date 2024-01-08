@@ -1,5 +1,7 @@
 import "../../style/customer/Cart.css";
 import React, {useEffect, useState} from 'react';
+import Header from "../default/Header";
+import Footer from "../default/Footer";
 
 
 const Title = () => {
@@ -67,7 +69,7 @@ const Goods = (props) => {
 const FreeDelivery = () => {
   return(
     <div className="freeDelivery">
-      <span>3만원 이상 구매시 무료배송</span>
+        <span>3만원 이상 구매시 무료배송</span>
     </div>
   );
 }
@@ -123,7 +125,7 @@ const OrderBtn = () => {
 
 
 
-function Cart(){
+const Cart = ({isLogin, logout, no}) => {
     const [totalPrice, setTotalPrice] = useState(0);
 
     const updateTotalPrice = (newTotal) => {
@@ -133,6 +135,7 @@ function Cart(){
 
     return(
       <>
+        <Header />
         <div className="cartGoodsDiv">
             <Title />
             <Goods bookName={"책이름1"} price={15000} updateTotal={updateTotalPrice}/>
@@ -142,6 +145,7 @@ function Cart(){
             <PayCount totalPrice={totalPrice}/>
         </div>
         <OrderBtn />
+          <Footer/>
       </>
     );
 }

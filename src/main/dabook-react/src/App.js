@@ -3,7 +3,6 @@ import './App.css';
 import Login from './component/customer/Login';
 import { useEffect, useState } from 'react';
 import Main from './component/default/Main';
-import Cart from "./component/customer/Cart";
 import Join from "./component/customer/Join";
 import Mypage from "./component/Mypage/Mypage";
 import InfoModify from "./component/Mypage/InfoModify";

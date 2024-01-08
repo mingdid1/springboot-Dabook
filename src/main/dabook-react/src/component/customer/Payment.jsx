@@ -2,6 +2,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import "../../style/customer/Payment.css"
 import Cart from "./Cart";
 import React, { useEffect, useState } from 'react';
+import Header from "../default/Header";
+import Footer from "../default/Footer";
 
 const OrderItem = () => {
   return(
@@ -160,6 +162,8 @@ function Payment(){
 
 
   return(
+      <>
+      <Header />
       <div className="payment">
         <h3>주문/결제하기</h3>
         <br />
@@ -173,6 +177,8 @@ function Payment(){
           <PayBtn/>
         </div>
       </div>
+      <Footer/>
+      </>
   );
 }
 

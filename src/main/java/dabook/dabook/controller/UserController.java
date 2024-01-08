@@ -21,7 +21,7 @@ public class UserController {
         //User user = new User("testId1", "test1", "010-1234-5678", "test@email");
 
         //userService.join(user);
-        return "user/join";
+        return "";
     }
 
     @PostMapping("/member")
