@@ -1,0 +1,99 @@
+.title{
+    padding: 0 330px;
+}
+.goodsDiv{
+    padding: 25px 10px 10px 10px;
+    width: 930px;
+}
+.aDiv{
+    padding: 25px 50px;
+    display: flex;
+    width: 930px;
+    border-bottom: 2px solid lightgray;
+}
+img{
+    height: 300px;
+    width: 200px;
+}
+.goodsTitle{
+    padding-top: 30px;
+    padding-left: 15px;
+    width: 450px;
+}
+.titleFontSize{
+    font-size: 25px;
+}
+.price{
+    font-weight: bold;
+}
+.volumeDiv{
+    padding: 30px 0;
+    width: 100px;
+}
+.volume{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.volumeBtn{
+    width: 30px;
+    height: 30px;
+    border: none;
+    border: 2px solid black;
+    font-weight: bold;
+}
+.cartGoodsDiv{
+    padding: 50px 330px 0px 330px;
+}
+.freeDelivery{
+    padding: 0px 10px 10px 10px;
+    margin-left: 10PX;
+    text-align: right;
+    width: 930px;
+    height: 40px;
+    font-size: 23px;
+    border-bottom: 2px solid lightgray;
+}
+.goodsCount{
+    padding: 0px 10px 10px 10px;
+    margin-left: 10PX;;
+    width: 930px;
+    font-size: 23px;
+    height: 40px;
+    border-bottom: 2px solid lightgray;
+    text-align: left;
+}
+.payCount{
+    padding: 40px 330px;
+    width: 930px;
+    border-bottom: 2px solid lightgray;
+}
+.payCountDiv{
+    width: 930px;
+    padding-left: 0px;
+    margin-left: 10px;
+    border-bottom: 2px solid lightgray;
+}
+.payNumber{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.payText{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+.orderbtn{
+    padding: 30px 330px;
+    text-align: center;
+}
+.orderbutton{
+    height: 70px;
+    width: 500px;
+    font-size: 25px;
+}

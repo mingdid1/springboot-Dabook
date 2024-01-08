@@ -3,22 +3,24 @@ import './App.css';
 import Login from './component/customer/Login';
 import { useEffect, useState } from 'react';
 import Main from './component/default/Main';
-import Cart from "./component/customer/Cart";
 import Join from "./component/customer/Join";
 import Mypage from "./component/Mypage/Mypage";
 import InfoModify from "./component/Mypage/InfoModify";
+import Cart from "./component/customer/Cart";
+import Payment from "./component/customer/Payment";
+import SubOption from "./component/customer/SubOption";
 
 function App() {
-    const [message, setMessage]=useState([]);
-    useEffect(()=>{
+    const [message, setMessage] = useState([]);
+    useEffect(() => {
         fetch("/api/demo-web")
-            .then((response)=>{
+            .then((response) => {
                 return response.json();
             })
-            .then((data)=>{
+            .then((data) => {
                 setMessage(data);
             });
-    },[]);
+    }, []);
 
     let navigate = useNavigate();
     let [no, setNo] = useState(0); // 회원 번호 담기 props로 넘겨주기 위함
@@ -73,7 +75,7 @@ function App() {
                     path="/"
                     exact={true}
                     element={
-                        <Main isLogin={isLogin} logout={logout} no={message} />
+                        <Main isLogin={isLogin} logout={logout} no={message}/>
                     }
                 />
                 <Route
@@ -81,36 +83,39 @@ function App() {
                     exact={true}
                     element={
                         <Login isLogin={isLogin} no={no}/>
-                }
+                    }
                 />
                 <Route
                     path={"/Join"}
                     exact={true}
                     element={
-                        !isLogin ? <Join isLogin={isLogin} /> : <Navigate to="/" />
+                        !isLogin ? <Join isLogin={isLogin}/> : <Navigate to="/"/>
                     }
                 />
                 <Route
                     path={"/Cart/:no"}
                     exact={true}
                     element={
-                        <Cart isLogin={isLogin} logout={logout} no={no} />
+                        <Cart isLogin={isLogin} logout={logout} no={no}/>
                     }
                 />
                 <Route
                     path={"/Mypage"}
                     exact={true}
                     element={
-                        <Mypage isLogin={isLogin} logout={logout} no={no} />
+                        <Mypage isLogin={isLogin} logout={logout} no={no}/>
                     }
                 />
                 <Route
                     path={"/InfoModify"}
                     exact={true}
                     element={
-                        <InfoModify />
+                        <InfoModify/>
                     }
                 />
+                <Route path="/sub" element={<SubOption/>}/>
+                <Route path="/pay" element={<Payment/>}/>
+                <Route path="/cart" element={<Cart/>}/>
             </Routes>
         </>
     );
