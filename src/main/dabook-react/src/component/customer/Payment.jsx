@@ -66,30 +66,29 @@ const Buyer = () => {
 }
 
 
-const Delivery = ({ isDeliverySameAsBuyer, buyerInfo, deliveryInfo, onInputChange }) => {
-
-
+const Delivery = ({deliveryInfo}) => {
   return(
     <>
       <div>
         <span className="fontSpan">배송지정보</span>
         <div className="delivery">
-          <DeliveryAPI />
           <div className="deliveryDiv">
             <div className="receiver">
-              <div className="mini">받는사람</div>
+              <div className="mini">이름</div>
               <div className="mini">전화번호</div>
             </div>
             <div className="receiverInfo">
               <div className="mini">
-                <input type="text" className="inputC" name="name" placeholder={isDeliverySameAsBuyer ? buyerInfo.name : '받는 사람 이름'}
-                 value={isDeliverySameAsBuyer ? buyerInfo.name : deliveryInfo.name} onChange={onInputChange}/></div>
+                <input type="text" className="inputC" name="name" placeholder="받는 사람 이름"
+                    value={deliveryInfo.name}/>
+              </div>
               <div className="mini">
-                <input type="text" className="inputC" name="tel" placeholder={isDeliverySameAsBuyer ? buyerInfo.phoneNumber : '받는 사람 전화번호'}
-                  value={isDeliverySameAsBuyer ? buyerInfo.phoneNumber : deliveryInfo.tel} onChange={onInputChange} />
+                <input type="text" className="inputC" name="tel" placeholder="받는 사람 전화번호"
+                       value={deliveryInfo.tel}/>
               </div>
             </div>
           </div>
+          <DeliveryAPI />
         </div>
       </div>
       <br /><br />
@@ -145,52 +144,36 @@ function Payment(){
   const handleCheckboxChange = () => {
     setDeliverySameAsBuyer(!isDeliverySameAsBuyer);
 
-  };
-
-  useEffect(() => {
-    // isDeliverySameAsBuyer가 변경될 때마다 호출되는 부수 효과
-    console.log("콘솔: ", isDeliverySameAsBuyer)
-    if (!isDeliverySameAsBuyer) {
-      setDeliveryInfo();
-    } else {
-      setDeliveryInfo({
-        name: '',
-        tel: '',
-      });
+    //체크박스가 체크된 경우, deliveryInfo를 buyerInfo로 설정
+    if(!isDeliverySameAsBuyer){
+        setDeliveryInfo({
+            name : buyerInfo.name,
+            tel : buyerInfo.phoneNumber,
+        });
+    } else{
+        setDeliveryInfo({
+            name: '',
+            tel : '',
+        });
     }
-  }, [isDeliverySameAsBuyer, buyerInfo]);
-
-  const handleInputChange = (e) => {
-    // 배송지 정보 입력 필드가 변경될 때 호출되는 함수
-    const { name, value } = e.target;
-    setDeliveryInfo({
-      ...deliveryInfo,
-      [name]: value,
-    });
   };
+
 
   return(
       <div className="payment">
         <h3>주문/결제하기</h3>
         <br />
         <div className="paymentDiv">
-          <OrderItem />
-
-          <input type="checkbox" checked={isDeliverySameAsBuyer} onChange={handleCheckboxChange} />
+          <Delivery deliveryInfo={deliveryInfo}/>
+          <input type="checkbox" checked={isDeliverySameAsBuyer} onChange={handleCheckboxChange}/>
           <span>배송지 정보 동일</span>
-          <Buyer buyerInfo={buyerInfo}/>
-
-          <Delivery isDeliverySameAsBuyer={isDeliverySameAsBuyer}
-          buyerInfo={buyerInfo}
-          deliveryInfo={deliveryInfo}
-          onInputChange={handleInputChange} />
-
-          <PayType />
-
-          <PayBtn />
+          <Buyer />
+          <OrderItem/>
+          <PayType/>
+          <PayBtn/>
         </div>
       </div>
-    );
+  );
 }
 
 export default Payment;

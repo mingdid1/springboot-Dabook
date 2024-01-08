@@ -17,7 +17,7 @@ public class UserService {
 
     //회원가입
     @Transactional
-    public String join(User user){
+    public String join(User user) {
         validateTestUser(user);
         userRepository.save(user);
         return user.getUserId();
@@ -26,7 +26,7 @@ public class UserService {
     private void validateTestUser(User user) {
         //EXCEPTION
         List<User> findmembers = userRepository.findById(user.getUserId());
-        if( !findmembers.isEmpty()){
+        if (!findmembers.isEmpty()) {
             throw new IllegalStateException("이미 존재하는 아이디 입니다.");
         }
     }

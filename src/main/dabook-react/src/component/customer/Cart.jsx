@@ -1,5 +1,5 @@
 import "../../style/customer/Cart.css";
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 
 const Title = () => {
@@ -11,25 +11,29 @@ const Title = () => {
   </>
   );
 }
-const Count = () => {
-  const [count, setCount] = useState(1);
-  function plus(){
-      setCount(count+1);
+const Count = (props) => {
+
+    const {price} = props;
+
+    const [count, setCount] = useState(1);
+    const [totalPrice, setTotalPrice] = useState(price);
+    const plus = () => {
+        setCount((prevCount) => prevCount + 1);
+    }
+    const minus = () => {
+        if(count>=2){
+            setCount((prevCount) => prevCount - 1);
+        }
     }
 
-  function minus(){
-    if(count>=2){
-      setCount(count-1);
-    }
-  }
-  function price(){
-    let price = 15000;
-    let totalPrice = price * count;
-    return totalPrice;
-  }
+    useEffect(() => {
+        // count가 변경될 때마다 totalPrice를 업데이트합니다.
+        setTotalPrice(price * count);
+    }, [count, price]);
+
   return(
     <div className="volumeDiv">
-      <span className="price">{price()}원</span>
+      <span className="price">{totalPrice}원</span>
       <div className="volume">
         <button className="volumeBtn" onClick={minus}>-</button>
         <span>&nbsp;{count}&nbsp;</span>
@@ -38,19 +42,23 @@ const Count = () => {
     </div>
   );
 }
-const Goods = () => {
+
+const Goods = (props) => {
+
+    const {bookName, price} = props;
+
   return(
     <div className="goodsDiv">
       <div className="aDiv">
             <div>
-              <img src="img/XL.jpeg" alt=""/>
+              <img src="../../image/book.jpeg" alt=""/>
             </div>
             <div className="goodsTitle">
-                <span className="titleFontSize">그대들은 어떻게 살것인가</span><br /><br />
-                <span className="price">15000원</span>
+                <span className="titleFontSize">{props.bookName}</span><br /><br />
+                <span className="price">{props.price}원</span>
             </div>
             <div className="volumeDiv">
-                <Count />
+                <Count price={price}/>
             </div>
           </div>
     </div>
@@ -71,15 +79,26 @@ const GoodsCount = () => {
   );
 }
 const PayCount = (props) => {
+
+    const {totalPrice} = props;
+    console.log("price: ", totalPrice);
+
+    // 상품금액, 배송비를 상수로 정의
+    const productPrice = totalPrice;
+    const deliveryFee = 3000; // 배송비가 있다면 해당 값을 사용
+
+    //총 주문금액 계산
+    const totalOrderAmount = productPrice + deliveryFee;
+
   return(
     <div className="PayCount">
         <div className="payCountDiv">
           <div className="payNumber">
-            <span>31,800원</span>
+            <span>{productPrice}원</span>
             <span>+</span>
-            <span>0원</span>
+            <span>{deliveryFee}원</span>
             <span>=</span>
-            <span>31,800원</span>
+            <span>{totalOrderAmount}원</span>
           </div>
           <div className="payText">
           <span>상품금액</span>
@@ -92,6 +111,8 @@ const PayCount = (props) => {
       </div>
   );
 }
+
+
 const OrderBtn = () => {
   return(
     <div className="orderbtn">
@@ -101,18 +122,25 @@ const OrderBtn = () => {
 }
 
 
+
 function Cart(){
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    const updateTotalPrice = (newTotal) => {
+        setTotalPrice(newTotal);
+    }
+
+
     return(
       <>
-
-          <div className="cartGoodsDiv">
-          <Title />
-            <Goods />
-            <Goods />
+        <div className="cartGoodsDiv">
+            <Title />
+            <Goods bookName={"책이름1"} price={15000} updateTotal={updateTotalPrice}/>
+            <Goods bookName={"책이름2"} price={20000} updateTotal={updateTotalPrice}/>
             <FreeDelivery />
             <GoodsCount />
-            <PayCount />
-          </div>
+            <PayCount totalPrice={totalPrice}/>
+        </div>
         <OrderBtn />
       </>
     );
