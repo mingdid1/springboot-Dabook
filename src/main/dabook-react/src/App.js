@@ -86,14 +86,14 @@ function App() {
                     }
                 />
                 <Route
-                    path={"/Join"}
+                    path="/Join"
                     exact={true}
                     element={
                         !isLogin ? <Join isLogin={isLogin}/> : <Navigate to="/"/>
                     }
                 />
                 <Route
-                    path={"/Cart/:no"}
+                    path="/Cart/:userNo"
                     exact={true}
                     element={
                         <Cart isLogin={isLogin} logout={logout} no={no}/>
@@ -113,9 +113,6 @@ function App() {
                         <InfoModify/>
                     }
                 />
-                <Route path="/sub" element={<SubOption/>}/>
-                <Route path="/pay" element={<Payment/>}/>
-                <Route path="/cart" element={<Cart/>}/>
             </Routes>
         </>
     );

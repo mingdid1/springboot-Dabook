@@ -1,5 +1,7 @@
 package dabook.dabook.controller;
 
+import dabook.dabook.dto.CartDto;
+import dabook.dabook.entity.Book;
 import dabook.dabook.entity.Cart;
 import dabook.dabook.service.CartService;
 import lombok.RequiredArgsConstructor;
@@ -8,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -15,11 +19,15 @@ public class CartController {
 
     private final CartService cartService;
 
-    @GetMapping("/Cart/{no}")
-    public List<Cart> findAll(@PathVariable("no") Long no){
-        List<Cart> cartList = cartService.findByNo(no);
-        return cartList;
+    @GetMapping("/Cart/{userNo}")
+    public List<CartDto> ListCartByUser (@PathVariable String userNo) {
+
+        List<Cart> userCartList = cartService.findByNo(userNo);
+
+        return userCartList.stream()
+                .map(CartDto::new)
+                .toList();
+
+
     }
-
-
 }

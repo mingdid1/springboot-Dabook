@@ -101,7 +101,7 @@ const Header = ({ isLogin, logout, no }) => {
                                 id="basic-nav-link"
                                 className="nav-menu, me-3"
                                 onClick={() => {
-                                    navigate("/");
+                                    navigate("/Cart");
                                 }}>
                                     Cart
                             </Nav.Link>

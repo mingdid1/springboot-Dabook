@@ -17,7 +17,7 @@ public class CartService {
     private final CartRepository cartRepository;
     private final CartRepositoryImpl cartRepositoryImpl;
 
-    public List<Cart> findByNo(Long no) {
+    public List<Cart> findByNo(String no) {
         List<Cart> cartList = cartRepositoryImpl.findByNo(no);
         return cartList;
     }
